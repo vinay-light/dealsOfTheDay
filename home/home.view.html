@@ -1,0 +1,39 @@
+﻿<!-- <h1>Hi {{vm.user.username}}!</h1>
+<p>You're logged in!!</p> -->
+<h3>All registered Vendors:</h3>
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Vendor Name</th>
+        <th scope="col">Product Name</th>
+        <th scope="col">Location</th>
+        <th scope="col">Start Date</th>
+        <th scope="col">End Date</th>
+        <th scope="col">Offer Details</th>
+        <th scope="col">Delete Vendor</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="user in vm.allUsers">
+        <th scope="row">{{$index+1}}</th>
+        <td>{{user.vendorName}}</td>
+        <td>{{user.product}}</td>
+        <td>{{user.location}}</td>
+        <td>{{user.startDate | date}}</td>
+        <td>{{user.endDate | date}}</td>
+        <td>{{user.offerDetails}}</td>
+        <td><a ng-click="vm.deleteUser(user.offerId)">Delete</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+<!-- <ul>
+    <li ng-repeat="user in vm.allUsers">
+        {{user.username}} ({{user.firstName}} {{user.lastName}})
+        - <a ng-click="vm.deleteUser(user.id)">Delete</a>
+    </li>
+</ul> -->
+<p>&nbsp;</p>
+<p class="text-right"><a href="#!/register" class="btn btn-danger">Register New Vendor</a></p>

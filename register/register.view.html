@@ -1,0 +1,66 @@
+﻿<div class="row">
+    <div class="col-md-12">
+        <h2>Product Registration</h2>
+    </div>
+    <form name="form" ng-submit="vm.register()" role="form">
+        <div class="col-md-6 col-sm-12 col-xs-12">
+            <div class="form-group" ng-class="{ 'has-error': form.vendorName.$dirty && form.vendorName.$error.required }">
+                <label for="vendorName">Vendor Name</label>
+                <input tabindex="1" type="text" name="vendorName" id="vendorName" class="form-control" ng-model="vm.user.vendorName" required />
+                <span ng-show="form.vendorName.$dirty && form.vendorName.$error.required" class="help-block">Vendor is required</span>
+            </div>
+            <!-- <div class="form-group" ng-class="{ 'has-error': form.offerId.$dirty && form.offerId.$error.required }">
+                    <label for="offerId">Offer ID</label>
+                    <input tabindex="3" type="text" name="offerId" id="offerId" class="form-control" ng-model="vm.user.offerId" required />
+                    <span ng-show="form.offerId.$dirty && form.offerId.$error.required" class="help-block">Offer ID is required</span>
+                </div> -->
+                <div class="form-group" ng-class="{ 'has-error': form.startDate.$dirty && form.startDate.$error.required }">
+                        <label for="startDate">Start Date</label>
+                        <input tabindex="5" type="date" min="2018-04-20" max="2018-04-30" name="startDate" id="startDate" class="form-control" ng-model="vm.user.startDate" required />
+                        <span ng-show="form.startDate.$dirty && form.startDate.$error.required" class="help-block">Start Date is required</span>
+                    </div>
+                    <div class="form-group" ng-class="{ 'has-error': form.location.$dirty && form.location.$error.required }">
+                            <label for="location">Location</label>
+                            <input tabindex="4" type="text" name="location" id="location" class="form-control" ng-model="vm.user.location" required />
+                            <span ng-show="form.location.$dirty && form.location.$error.required" class="help-block">Location is required</span>
+                        </div>
+        </div>
+        <div class="col-md-6 col-sm-12 col-xs-12">
+            <div class="form-group" ng-class="{ 'has-error': form.product.$dirty && form.product.$error.required }">
+                <label for="product">Product Name</label>
+                <input tabindex="2" type="text" name="product" id="product" class="form-control" ng-model="vm.user.product" required />
+                <span ng-show="form.product.$dirty && form.product.$error.required" class="help-block">Product Name is required</span>
+            </div>
+            <!-- <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" class="form-control" ng-model="vm.user.password" required />
+                <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Password is required</span>
+            </div> -->
+           
+           
+            <div class="form-group" ng-class="{ 'has-error': form.endDate.$dirty && form.endDate.$error.required }">
+                <label for="endDate">End Date</label>
+                <input tabindex="6" type="date" name="endDate" id="endDate" min="2018-04-20" max="2018-04-30" class="form-control" ng-model="vm.user.endDate" required />
+                <span ng-show="form.endDate.$dirty && form.endDate.$error.required" class="help-block">End Date is required</span>
+            </div>
+            
+        </div>
+        <div class="col-md-12">
+            <div class="form-group" ng-class="{ 'has-error': form.offerDetails.$dirty && form.offerDetails.$error.required }">
+                <label for="offerDetails">Offer Details</label>
+                <textarea tabindex="7" type="offerDetails" name="offerDetails" id="offerDetails" class="form-control" ng-model="vm.user.offerDetails"
+                />
+                <span ng-show="form.offerDetails.$dirty && form.offerDetails.$error.required" class="help-block">Product Offer is required</span>
+            </div>
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+            <div class="form-actions">
+                <br>
+                <button tabindex="8" type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-danger">Register</button>
+                <img ng-if="vm.dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="
+                />
+                <a href="#!/" class="btn btn-link">Cancel</a>
+            </div>
+        </div>
+    </form>
+</div>
